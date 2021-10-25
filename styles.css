@@ -125,3 +125,82 @@ body{
     clear: both;
     font-size: 13px;
 }
+
+@media screen and (min-width: 1000px){
+
+    .container{
+        display: grid;
+        gap: 30px;
+        padding: 0 40px;
+        min-width: 1000px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "heading ratings"
+        "reviews reviews";
+
+        background-image: url(images/bg-pattern-top-desktop.svg), 
+        url(images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+    }
+
+    .heading{
+        grid-area: heading;
+    }
+
+    .heading h1{
+        font-size: 40px;
+        text-align: left;
+    }
+
+    .heading p{
+        text-align: left;
+        padding: 0 40px;
+    }
+
+    .rating{
+        grid-area: ratings;
+    }
+
+    .rating-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .rating-container:nth-child(2){
+        position: relative;
+        inset-inline-start: 50px;
+    }
+
+    .rating-container:nth-child(3){
+        position: relative;
+        inset-inline-start: 100px;
+    }
+
+    .reviews{
+        grid-area: reviews;
+        display: flex;
+    }
+
+    .review-container{
+        align-self: stretch;
+        margin: 10px 10px;
+    }
+
+    .review-container:nth-child(1){
+        position: relative;
+        bottom: 15px;
+    }
+
+    .review-container:nth-child(3){
+        position: relative;
+        top: 15px;
+    }
+
+
+
+
+}
